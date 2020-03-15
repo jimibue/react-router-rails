@@ -3,12 +3,12 @@
 ## clone a branch
 git clone -b <branch> <remote_repo>
 
-## setup-done branch
+## react-components-setup  branch
 ```
-git clone -b setup-done git@github.com:jimibue/react-router-rails.git
+git clone -b react-components-setup git@github.com:jimibue/react-router-rails.git
 cd react-router-rails
 git checkout -b master  (note you don't have master since you cloned a branch)
-git branch -d setup-done
+git branch -d react-components-setup 
 git remote rm origin
 ```
 
