@@ -27,6 +27,11 @@ class Products extends React.Component {
             { product.description }
           </Card.Description>
         </Card.Content>
+        <Card.Content extra>
+          <Button as={Link} to={`/products/${product.id}`} color='blue'>
+            View
+          </Button>
+        </Card.Content>
       </Card>
     ))
   }

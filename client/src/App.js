@@ -7,6 +7,7 @@ import { Container, } from "semantic-ui-react";
 import Navbar from './components/NavBar';
 import Products from './components/Products';
 import ProductsForm from './components/ProductsForm'
+import ProductReview from './components/ProductView';
 
 
 const App = () => (
@@ -18,6 +19,7 @@ const App = () => (
         <Route path="/about" component={About} />
         <Route exact path="/products" component={Products} />
         <Route exact path="/products/new" component={ProductsForm} />
+        <Route exact path="/products/:id" component={ProductReview} />
         <Route component={NoMatch} />
       </Switch>
     </Container>
