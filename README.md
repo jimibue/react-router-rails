@@ -4,13 +4,26 @@
 git clone -b <branch> <remote_repo>
 
 ## setup-done branch
+```
 git clone -b setup-done git@github.com:jimibue/react-router-rails.git
+cd react-router-rails
+git checkout -b master  (note you don't have master since you cloned a branch)
+git branch -d setup-done
+git remote rm origin
+```
 
 1. Start rails server
-- rails s -p 3001 
->if you clone you need to run `bundle`, you also need to create, migrate, seed your database
-you might need to rename your database in the database.yml file
+```
+rails db:drop db:create db:migrate db:seed
+rails s -p 3001 
+```
+>if you clone you need to run `bundle`, you also need to drop, create, migrate, seed your database
+
 
 2. Start react server
-- yarn start
+```
+cd client
+yarn
+yarn start
+```
 >before you run this you need to cd into the client directory and run 'yarn' to install packages
