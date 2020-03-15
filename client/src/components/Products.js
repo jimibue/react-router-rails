@@ -1,12 +1,16 @@
 import React from "react";
-import { Card, Header, } from "semantic-ui-react";
+import { Card, Header, Button, } from "semantic-ui-react";
+import { Link } from "react-router-dom";
+import axios from 'axios'
 
 class Products extends React.Component {
   state = { products: [], };
 
   componentDidMount() {
-    // TODO: Make GET request with axios
-    // TODO: Update state
+    axios.get("/api/products")
+      .then( res => {
+        this.setState({ products: res.data, });
+      })
   }
 
   renderProducts = () => {
@@ -30,12 +34,17 @@ class Products extends React.Component {
   render() {
     return (
       <div>
-        <Header as="h1">Products</Header>
-        <br />
-        <Card.Group>
-          { this.renderProducts() }
-        </Card.Group>
-      </div>
+      <Header as="h1">Products</Header>
+      <br />
+      <Button as={Link} color="blue" to="/products/new">
+        Add Product
+      </Button>
+      <br />
+      <br />
+      <Card.Group>
+        { this.renderProducts() }
+      </Card.Group>
+    </div>
     )
   }
 }
