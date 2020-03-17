@@ -11,6 +11,7 @@ export default class ProductView extends React.Component {
     console.log(this.props.match.params);
     const product_id = this.props.match.params.id;
     axios.get(`/api/products/${product_id}`).then(res => {
+      
       // nested axios call
       const productData = res.data;
       axios.get(`/api/products/${product_id}/comments`).then(res => {
