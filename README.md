@@ -14,6 +14,7 @@ git remote rm origin
 
 1. Start rails server
 ```
+bundle
 rails db:drop db:create db:migrate db:seed
 rails s -p 3001 
 ```
